@@ -105,6 +105,7 @@ class HomeView extends GetView<HomeController> {
                                   Map map={
                                     'data':'https://www.youtube.com/watch?v=a73dowZxBZc&list=PLMWIX0kIaIeV0Uf89lzabQFJeVvg6C0Ip&index=1'
                                   };
+
                                   Get.toNamed(Routes.VIDEOPLAYER,arguments:map);
                                 }else  if(controller.getDynamicData[index]['module_name']=="Test Generator"){
                                   Utils.commonViewPopup(
