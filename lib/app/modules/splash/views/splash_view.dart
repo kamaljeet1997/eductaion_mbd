@@ -21,9 +21,12 @@ class SplashView extends GetView<SplashController> {
         height: Get.height,
         width: Get.width,
         // color: AppColors.white,
-        child:  controller.loading==true
-            ?Image.asset('images/Newlogo.png',)
-            :Image.asset('images/Newlogo.png',),
+        child:  Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: controller.loading==true
+              ?Image.asset('images/Newlogo.png',)
+              :Image.asset('images/Newlogo.png',),
+        ),
 
       ),
     );

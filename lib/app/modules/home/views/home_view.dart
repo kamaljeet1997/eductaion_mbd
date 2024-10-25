@@ -52,7 +52,7 @@ class HomeView extends GetView<HomeController> {
                       child: Obx(
                             () => InkWell(
                               onTap: (){
-                                if(controller.getDynamicData[index]['module_name']=='Ebook'){
+                                if(controller.getDynamicData[index]['module_name']=='E-book'){
                                   Utils.commonViewPopup(
                                       Image.asset("images/img.png", height: 240),
                                       "View",
@@ -102,10 +102,14 @@ class HomeView extends GetView<HomeController> {
                                   });
 
                                 }else  if(controller.getDynamicData[index]['module_name']=="Animation"){
-                                  Map map={
-                                    'data':'https://www.youtube.com/watch?v=a73dowZxBZc&list=PLMWIX0kIaIeV0Uf89lzabQFJeVvg6C0Ip&index=1'
-                                  };
-                                  Get.toNamed(Routes.VIDEOPLAYER,arguments:map);
+
+                                  Navigator.push(
+                                    Get.context!,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          InAppWebViewContainer('https://www.youtube.com/watch?v=a73dowZxBZc&list=PLMWIX0kIaIeV0Uf89lzabQFJeVvg6C0Ip&index=1'),
+                                    ),
+                                  );
                                 }else  if(controller.getDynamicData[index]['module_name']=="Test Generator"){
                                   Utils.commonViewPopup(
                                       Image.asset("images/img.png", height: 240),
