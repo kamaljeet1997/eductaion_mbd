@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
 import 'appColors.dart';
 
 
@@ -61,24 +63,22 @@ class _InAppWebViewContainerState extends State<InAppWebViewContainer> {
                           initialSettings: InAppWebViewSettings(
                             javaScriptEnabled: true,
                             supportZoom: false,
+                            useOnDownloadStart: true,
                             // disableVerticalScroll: false,
                             // disableHorizontalScroll: true,
                           ),
-                          onWebViewCreated: (controller) async {
-                            print('onWebViewCreated');
-                            // _controller = controller;
+                          onWebViewCreated: (InAppWebViewController controller) {
+                            // _webViewController = controller;
                           },
-                          onReceivedError: (controller, request, error) {
-                            print('onReceivedError -> $error');
-                          },
-                          onReceivedHttpError: (controller, request, errorResponse) {
-                            print('onReceivedHttpError -> $errorResponse');
-                          },
-                          onProgressChanged: (controller, progress) {
-                            print('onProgressChanged -> $progress');
-                          },
-                          onLoadStop: (controller, url) async {
-                            print('onLoadStop');
+                          onDownloadStartRequest: (controller, url) async {
+                            var ext=await getExternalStorageDirectory();
+                            print("onDownloadStart $url");
+                            final taskId = await FlutterDownloader.enqueue(
+                              url: url.toString(),
+                              savedDir: ext!.path,
+                              showNotification: true, // show download progress in status bar (for Android)
+                              openFileFromNotification: true, // click on notification to open downloaded file (for Android)
+                            );
                           },
                         ),
                       ),

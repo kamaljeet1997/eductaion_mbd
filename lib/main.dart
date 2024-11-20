@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:get/get.dart';
@@ -30,6 +31,9 @@ void main() async {
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(
+      debug: true // optional: set false to disable printing logs to console
+  );
   // await Firebase.initializeApp();
   //
   // await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(

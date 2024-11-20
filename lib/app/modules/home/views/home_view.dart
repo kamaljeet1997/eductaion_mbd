@@ -115,14 +115,7 @@ class HomeView extends GetView<HomeController> {
                                       Image.asset("images/img.png", height: 240),
                                       "View",
                                       "Are you sure you want to open it in a new browser?", () {
-                                    Get.back();
-                                    Navigator.push(
-                                      Get.context!,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            InAppWebViewContainer('https://mbdseries.s3.ap-south-1.amazonaws.com/hflws/LW_Smart_EVS_1/tab/tg/index.html'),
-                                      ),
-                                    );
+                                   Utils.launchURL('https://mbdseries.s3.ap-south-1.amazonaws.com/hflws/LW_Smart_EVS_1/tab/tg/index.html');
                                   }, () {
                                     Get.back();
                                   });
