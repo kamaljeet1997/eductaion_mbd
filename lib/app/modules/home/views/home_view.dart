@@ -52,77 +52,104 @@ class HomeView extends GetView<HomeController> {
                       child: Obx(
                             () => InkWell(
                               onTap: (){
-                                if(controller.getDynamicData[index]['module_name']=='Ebook'){
-                                  Utils.commonViewPopup(
-                                      Image.asset("images/img.png", height: 240),
-                                      "View",
-                                      "Are you sure you want to open it in a new browser?", () {
-                                    Get.back();
-                                    Navigator.push(
-                                      Get.context!,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            InAppWebViewContainer('https://newgenbookspvtltd.com/E-books/Mi-IT/grade-1/e-book/index.html'),
-                                      ),
-                                    );
-                                  }, () {
-                                    Get.back();
-                                  });
+                                if(controller.getDynamicData[index]['module_name']=='E-book'){
+                                  if(controller.map['Ebook_link']!=""){
+                                    print('Link details  :  ${controller.map['Ebook_link']}');
+                                    Utils.commonViewPopup(
+                                        Image.asset("images/img.png", height: 240),
+                                        "View",
+                                        "Are you sure you want to open ebook it in a new browser?", () {
+                                      Get.back();
+                                      Navigator.push(
+                                        Get.context!,
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              InAppWebViewContainer(controller.map['Ebook_link']),
+                                        ),
+                                      );
+                                    }, () {
+                                      Get.back();
+                                    });
+                                  }else{
+                                    Utils.shortAlertToast("Link not available");
+                                  }
+
                                 }else  if(controller.getDynamicData[index]['module_name']=="Assessment"){
-                                  Utils.commonViewPopup(
-                                      Image.asset("images/img.png", height: 240),
-                                      "View",
-                                      "Are you sure you want to open it in a new browser?", () {
-                                    Get.back();
-                                    Navigator.push(
-                                      Get.context!,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            InAppWebViewContainer('https://newgenbookspvtltd.com/E-books/Mi-IT/grade-1/assessment/index.html'),
-                                      ),
-                                    );
-                                  }, () {
-                                    Get.back();
-                                  });
+                                  if(controller.map['Assessment_link']!=""){
+                                    Utils.commonViewPopup(
+                                        Image.asset("images/img.png", height: 240),
+                                        "View",
+                                        "Are you sure you want to open it in a new browser?", () {
+                                      Get.back();
+                                      Navigator.push(
+                                        Get.context!,
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              InAppWebViewContainer(controller.map['Assessment_link']),
+                                        ),
+                                      );
+                                    }, () {
+                                      Get.back();
+                                    });
+                                  }else{
+                                    Utils.shortAlertToast("Link not available");
+                                  }
+
                                 }else  if(controller.getDynamicData[index]['module_name']=="Interactivity"){
-                                  Utils.commonViewPopup(
-                                      Image.asset("images/img.png", height: 240),
-                                      "View",
-                                      "Are you sure you want to open it in a new browser?", () {
-                                    Get.back();
-                                    Navigator.push(
-                                      Get.context!,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            InAppWebViewContainer('https://newgenbookspvtltd.com/E-books/Mi-IT/grade-1/int_e-book/index.html'),
-                                      ),
-                                    );
-                                  }, () {
-                                    Get.back();
-                                  });
+
+                                  if(controller.map['Interactivity_link']!=""){
+                                    Utils.commonViewPopup(
+                                        Image.asset("images/img.png", height: 240),
+                                        "View",
+                                        "Are you sure you want to open it in a new browser?", () {
+                                      Get.back();
+                                      Navigator.push(
+                                        Get.context!,
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              InAppWebViewContainer(controller.map['Interactivity_link']),
+                                        ),
+                                      );
+                                    }, () {
+                                      Get.back();
+                                    });
+                                  }else{
+                                    Utils.shortAlertToast("Link not available");
+                                  }
+
 
                                 }else  if(controller.getDynamicData[index]['module_name']=="Animation"){
-                                  Map map={
-                                    'data':'https://www.youtube.com/watch?v=a73dowZxBZc&list=PLMWIX0kIaIeV0Uf89lzabQFJeVvg6C0Ip&index=1'
-                                  };
+                                  if(controller.map['Animation_link']!=""){
+                                    Map map={
+                                      'data':controller.map['Animation_link']
+                                    };
 
-                                  Get.toNamed(Routes.VIDEOPLAYER,arguments:map);
+                                    Get.toNamed(Routes.VIDEOPLAYER,arguments:map);
+                                  }else{
+                                    Utils.shortAlertToast("Link not available");
+                                  }
+
                                 }else  if(controller.getDynamicData[index]['module_name']=="Test Generator"){
-                                  Utils.commonViewPopup(
-                                      Image.asset("images/img.png", height: 240),
-                                      "View",
-                                      "Are you sure you want to open it in a new browser?", () {
-                                    Get.back();
-                                    Navigator.push(
-                                      Get.context!,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            InAppWebViewContainer('https://mbdseries.s3.ap-south-1.amazonaws.com/hflws/LW_Smart_EVS_1/tab/tg/index.html'),
-                                      ),
-                                    );
-                                  }, () {
-                                    Get.back();
-                                  });
+                                  if(controller.map['TG_link']!=""){
+                                    Utils.commonViewPopup(
+                                        Image.asset("images/img.png", height: 240),
+                                        "View",
+                                        "Are you sure you want to open it in a new browser?", () {
+                                      Get.back();
+                                      Navigator.push(
+                                        Get.context!,
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              InAppWebViewContainer(controller.map['TG_link']),
+                                        ),
+                                      );
+                                    }, () {
+                                      Get.back();
+                                    });
+                                  }else{
+                                    Utils.shortAlertToast("Link not available");
+                                  }
+
                                 }
 
                                 // Get.toNamed(Routes.CLASSES,arguments: controller.getClass);
