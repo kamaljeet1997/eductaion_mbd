@@ -124,7 +124,13 @@ class HomeView extends GetView<HomeController> {
                                       'data':controller.map['Animation_link']
                                     };
 
-                                    Get.toNamed(Routes.VIDEOPLAYER,arguments:map);
+                                    Navigator.push(
+                                      Get.context!,
+                                      MaterialPageRoute(
+                                        builder: (_) =>
+                                            InAppWebViewContainer(controller.map['Animation_link']),
+                                      ),
+                                    );
                                   }else{
                                     Utils.shortAlertToast("Link not available");
                                   }

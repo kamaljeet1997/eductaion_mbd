@@ -143,7 +143,7 @@ class ClassesView extends GetView<ClassesController> {
                                               Get.toNamed(Routes.SUBJECT,arguments:map);
           
                                             }
-                                            else if(controller.getClass[i]=='LKG'){
+                                            else if(controller.getClass[n]=='LKG'){
                                               controller.getSubjects.clear();
 
                                               controller.getSubjects=[
@@ -217,7 +217,7 @@ class ClassesView extends GetView<ClassesController> {
                                                   'TG_link':"",
                                                   'Assessment_link':"",
                                                 },
-                                                {"name":'Learn to Write Cursive-A',
+                                                {"name":'Learn to Write Cursive-A ',
                                                   'Ebook_link':"",
                                                   'Animation_link':"",
                                                   'Interactivity_link':"",
@@ -231,7 +231,8 @@ class ClassesView extends GetView<ClassesController> {
                                                 "class":'LKG'
                                               };
                                               Get.toNamed(Routes.SUBJECT,arguments:map);
-                                            }else if(controller.getClass[n]=='UKG'){
+                                            }
+                                            else if(controller.getClass[n]=='UKG'){
                                               controller.getSubjects.clear();
                                               controller.getSubjects=[
                                                 {"name":'ClapClap Kit-C',
@@ -324,7 +325,8 @@ class ClassesView extends GetView<ClassesController> {
                                                 "class":'UKG'
                                               };
                                               Get.toNamed(Routes.SUBJECT,arguments:map);
-                                            }else if(controller.getClass[n]=='Class 1'){
+                                            }
+                                            else if(controller.getClass[n]=='Class 1'){
                                               controller.getSubjects.clear();
 
                                               controller.getSubjects=[
@@ -392,7 +394,7 @@ class ClassesView extends GetView<ClassesController> {
                                                   'Assessment_link':"",
                                                 },
                                                 {"name":'SARAL HINDI VYAKARAN - 1',
-                                                  'Ebook_link':"",
+                                                  'Ebook_link':"https://www.newgenbookspvtltd.com/E-books/Saral-Hindi-Vyakaran/Grade-1/e-book/index.html",
                                                   'Animation_link':"",
                                                   'Interactivity_link':"",
                                                   'TG_link':"",
@@ -421,7 +423,8 @@ class ClassesView extends GetView<ClassesController> {
                                                 "class":'Class 1'
                                               };
                                               Get.toNamed(Routes.SUBJECT,arguments:map);
-                                            }else if(controller.getClass[n]=='Class 2'){
+                                            }
+                                            else if(controller.getClass[n]=='Class 2'){
                                               controller.getSubjects.clear();
 
                                               controller.getSubjects=[
@@ -461,8 +464,8 @@ class ClassesView extends GetView<ClassesController> {
                                                   'Assessment_link':"",
                                                 },
                                                 {"name":'Easy English Grammar - 2',
-                                                  'Ebook_link':"",
-                                                  'Animation_link':"",
+                                                  'Ebook_link':"https://www.newgenbookspvtltd.com/E-books/Easy-English-Grammar/Grade-2/e-book/index.html",
+                                                  'Animation_link':"https://www.youtube.com/playlist?list=PLMWIX0kIaIeVpuh791DTBL8o-xfML2GFO",
                                                   'Interactivity_link':"",
                                                   'TG_link':"",
                                                   'Assessment_link':"",

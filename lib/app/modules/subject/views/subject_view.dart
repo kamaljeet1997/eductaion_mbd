@@ -1,4 +1,5 @@
 import 'package:education_mbd/app/routes/app_pages.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -74,13 +75,22 @@ class SubjectView extends GetView<SubjectController> {
                                               "Assessment_link":""
                                               };
                                               Get.toNamed(Routes.HOME, arguments: map);
-            
+
                                             },
-                                            child: Container(
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Text(controller.getSubjects[i]['name'],style: Utils.text16SPMedium()),
-                                              ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Padding(
+                                                      padding: const EdgeInsets.all(8.0),
+                                                      child: Text(controller.getSubjects[i]['name'],
+                                                          textAlign: TextAlign.center,
+                                                          style: Utils.text16SPMedium()),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                          i<controller.getSubjects.length-1?Row(
