@@ -399,6 +399,15 @@ class ClassesView extends GetView<ClassesController> {
                                                   'Interactivity_link':"",
                                                   'TG_link':"",
                                                   'Assessment_link':"",
+
+                                                },
+                                                {
+                                                  "name":'Sulekh Mala - 1',
+                                                  'Ebook_link':"",
+                                                  'Animation_link':"",
+                                                  'Interactivity_link':"",
+                                                  'TG_link':"",
+                                                  'Assessment_link':"",
                                                 },
                                                   {"name":'Environmental Studies - 1',
                                                   'Ebook_link':"",
