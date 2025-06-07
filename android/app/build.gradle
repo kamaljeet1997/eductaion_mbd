@@ -29,8 +29,8 @@ if (keystorePropertiesFile.exists()) {
 
 
 android {
-    namespace "com.education.education_mbd"
-    compileSdk 34
+    namespace "com.education.edu"
+    compileSdk 35
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -48,11 +48,11 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.education.education_mbd"
+        applicationId "com.education.edu"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
