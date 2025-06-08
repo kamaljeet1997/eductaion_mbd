@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace "com.education.edu"
     compileSdk 35
-    ndkVersion flutter.ndkVersion
+    ndkVersion "25.2.9519653" // ✅ Correct placement
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -56,6 +56,7 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
+
     }
 
     signingConfigs {
